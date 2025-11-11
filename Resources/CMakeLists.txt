@@ -72,9 +72,9 @@ if(OPENSPADES_RESOURCES)
 	if(WIN32)
 		add_custom_command(
 			OUTPUT ${COMPILED_PAK_FILES}
-			COMMAND powershell -ExecutionPolicy Bypass 
-				${CMAKE_CURRENT_SOURCE_DIR}/mkpak.ps1
-				${CMAKE_CURRENT_BINARY_DIR}
+			COMMAND powershell -ExecutionPolicy Bypass -File
+				\"${CMAKE_CURRENT_SOURCE_DIR}/mkpak.ps1\"
+				\"${CMAKE_CURRENT_BINARY_DIR}\"
 			COMMENT "Building paks"
 			DEPENDS ${PAK_IN_FILES} ${CMAKE_CURRENT_SOURCE_DIR}/mkpak.ps1
 			WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
